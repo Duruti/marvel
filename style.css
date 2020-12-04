@@ -89,8 +89,46 @@ body{
 }
 
 
+/* Card info character */
 
+.cardInfo{
+   position: fixed;
+   top: -50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   width: 900px;
+   height: 600px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background-color: darkolivegreen;
+   transition: top 0.3s ease-in;
+}
+.animCard{
+   top : 50%
 
+}
+.nameCardInfo{
+   margin: 20px 0;
+   font-size: 45px;
+   text-align: center;
+}
+.descriptionCard{
+   width: 80%;
+   background-color: darkorange;
+   display: flex;
+   justify-content: space-around;
+}
+.description{
+   width: 50%;
+   align-self: center;
+}
+.description::first-letter{
+   font-size: 3rem;
+}
+.logoCardInfo{
+   width: 40%;
+}
 
 
 
