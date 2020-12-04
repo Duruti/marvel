@@ -93,7 +93,7 @@ body{
 
 .cardInfo{
    position: fixed;
-   top: -50%;
+   top: -100%;
    left: 50%;
    transform: translate(-50%,-50%);
    width: 900px;
@@ -102,7 +102,7 @@ body{
    flex-direction: column;
    align-items: center;
    background-color: darkolivegreen;
-   transition: top 0.3s ease-in;
+   transition: top 0.4s ease-in;
 }
 .animCard{
    top : 50%
@@ -130,7 +130,40 @@ body{
    width: 40%;
 }
 
-
+@media screen and (max-width:500px){
+   .cardInfo{
+      position: fixed;
+      width: 300px;
+      height: auto;
+      min-height: 400px;
+      background-color: darkred;
+   }
+   .descriptionCard{
+      width: 80%;
+      flex-direction: column;
+      align-items: center;
+   }
+   .logoCardInfo{
+      width: 60%;
+   }
+   .description{
+      width: 90%;
+      background-color: darkslateblue;
+      align-self: center;
+      justify-self: center;
+      font-size: 14px;
+      margin-bottom: 10px;
+   }
+   .nameCardInfo{
+      margin: 20px 0;
+      font-size: 8vw;
+      text-align: center;
+   }
+   .animCard{
+      top : 50%
+   
+   }
+} 
 
 
 

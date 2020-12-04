@@ -5,13 +5,13 @@ let logo = document.querySelector(".logo")
 let containerCards = document.querySelector(".cards")
 let cardInfo = document.querySelector(".cardInfo")
 
-// window.addEventListener('click',()=>{
+cardInfo.addEventListener('click',()=>{
    
-//    if (cardInfo.classList.contains('animCard')){
-//    cardInfo.classList.toggle('animCard');
-//    console.log("true")
-// }     
-// })
+   if (cardInfo.classList.contains('animCard')){
+   cardInfo.classList.toggle('animCard');
+   console.log("true")
+}     
+})
 
 // containerCards.addEventListener('click', ()=>{
 //    cardInfo.classList.toggle('animCard')
