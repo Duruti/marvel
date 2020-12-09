@@ -1,6 +1,6 @@
-let keyPublic = 'd3b97d40b5ed5059a984df36093c63c4'
-let keyPrivate = '2b2537515cda562ecdcf3f7c93bf44ffe6bacea8'
 
+
+let index = 0
 let logo = document.querySelector(".logo")
 let containerCards = document.querySelector(".cards")
 let cardInfo = document.querySelector(".cardInfo")
@@ -20,11 +20,23 @@ cardInfo.addEventListener('click',()=>{
 
  connect()
 
+ window.addEventListener('scroll', () => {
+ //  if (inputFocus) return;
+   const {scrollTop,scrollHeight,clientHeight} = document.documentElement;
+   if ((Math.trunc(scrollHeight-scrollTop)-(clientHeight+100)) <= 0 ){
+      console.log('en bas ' + index )
+      index = index + 20
+     connect();
+   }
+})
+
 function connect(){
-   fetch('https://gateway.marvel.com:443/v1/public/characters?limit=50&apikey=d3b97d40b5ed5059a984df36093c63c4&hash=8ca546ed33714770ccae7e432abb3c92&ts=1')
+   console.log(index)
+   let l = index + 10
+   fetch(`https://gateway.marvel.com:443/v1/public/characters?offset=${index}?limit=${index+20}&apikey=d3b97d40b5ed5059a984df36093c63c4&hash=8ca546ed33714770ccae7e432abb3c92&ts=1`)
    .then(r => r.json())
    .then(d => {
-      console.log(d.data.results)
+      //console.log(d.data.results)
       d.data.results.forEach(e => {
          getInfoCharacter(e)
       });
