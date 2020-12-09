@@ -1,4 +1,5 @@
 
+let visibleCards = []
 
 let index = 0
 let logo = document.querySelector(".logo")
@@ -53,7 +54,7 @@ function getInfoCharacter(data){
    }
    console.log(obj.name)
  //  logo.src = p
- createCard(obj)
+   createCard(obj)
 }
 function createCard(object){
    let card = document.createElement('div')

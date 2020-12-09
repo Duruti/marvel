@@ -146,7 +146,7 @@ body{
       width: 300px;
       height: auto;
       min-height: 400px;
-      background-color: darkred;
+      padding-bottom: 20px;
    }
    .descriptionCard{
       width: 80%;
@@ -158,7 +158,6 @@ body{
    }
    .description{
       width: 90%;
-      background-color: darkslateblue;
       align-self: center;
       justify-self: center;
       font-size: 14px;
