@@ -12,6 +12,7 @@
 body{
    background-color: #202020;
    font-family: 'Roboto', sans-serif;
+   height: 100vh;
    ;
 }
 .title{
@@ -22,7 +23,7 @@ body{
    align-items: center;
    justify-content: center;
    background-color: #EE1A26;
-
+   cursor: pointer;
 }
 .title h1{
    font-family: Marvel;
@@ -55,7 +56,18 @@ body{
    padding-left: 10px;
    color: #f1f1f1;
 }
-
+.send{
+   width: 30%;
+   padding: 10px;
+   margin: 10px;
+   font-size: 1rem;
+   font-weight: 400;
+   outline: 0;
+   border: none;
+   border-radius: 5px;
+   align-self: center;
+   cursor: pointer;
+}
 /* card */
 
 .cards{
@@ -71,14 +83,16 @@ body{
 
 .card{
    margin: 5px;
-   width: 250px;
-   height: 400px;
+   width: 200px;
+   height: 300px;
    border-radius: 5px;
    overflow: hidden;
    background-color: #202020;
    display: flex;
    flex-direction: column;
    align-items: center;
+   justify-content: center;
+   cursor: pointer;
    /* box-shadow: 5px 5px 5px black; */
 }
 .card .name{
@@ -88,11 +102,12 @@ body{
    /* background-color: tomato; */
    text-align: center;
    padding-top: 5px;
-   margin-bottom: 10px;
+   /* margin-bottom: 10px; */
+   font-size: 25px;
    
 }
 .card img{
-   width: 200px;
+   width: 135px;
 }
 
 
@@ -103,8 +118,8 @@ body{
    top: -100%;
    left: 50%;
    transform: translate(-50%,-50%);
-   width: 900px;
-   height: 600px;
+   width: 600px;
+   height: 400px;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -113,8 +128,7 @@ body{
    border-radius: 5px;
 }
 .animCard{
-   top : 50%
-
+   top : 50%;
 }
 .nameCardInfo{
    margin: 20px 0;
@@ -132,6 +146,7 @@ body{
    align-self: center;
    justify-self: flex-start;
    margin: 0 20px ;
+   font-size: 80%;
 }
 .description::first-letter{
    font-size: 3rem;
@@ -140,9 +155,11 @@ body{
    width: 40%;
 }
 
-@media screen and (max-width:500px){
+@media screen and (max-width:768px){
    .cardInfo{
+      
       position: fixed;
+      top : -100%;
       width: 300px;
       height: auto;
       min-height: 400px;
@@ -160,7 +177,7 @@ body{
       width: 90%;
       align-self: center;
       justify-self: center;
-      font-size: 14px;
+      font-size: 12px;
       margin-bottom: 10px;
    }
    .nameCardInfo{
@@ -169,8 +186,14 @@ body{
       text-align: center;
    }
    .animCard{
-      top : 50%
+      top : 50%;
    
+   }
+   .search{
+      width: 80%;
+   }
+   .send{
+      width: 150px;
    }
 } 
 

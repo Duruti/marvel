@@ -5,7 +5,20 @@ let index = 0
 let logo = document.querySelector(".logo")
 let containerCards = document.querySelector(".cards")
 let cardInfo = document.querySelector(".cardInfo")
+let send = document.querySelector('.send')
+let input = document.querySelector('.searchInput')
+let title = document.querySelector('.title')
 
+title.addEventListener('click',(e) => {
+   //e.preventDefault();
+   containerCards.innerHTML = ""
+   connect()
+})
+send.addEventListener('click',(e)=>{
+   e.preventDefault();
+   searchByName(input.value);
+
+})
 cardInfo.addEventListener('click',()=>{
    
    if (cardInfo.classList.contains('animCard')){
@@ -22,14 +35,32 @@ cardInfo.addEventListener('click',()=>{
  connect()
 
  window.addEventListener('scroll', () => {
- //  if (inputFocus) return;
    const {scrollTop,scrollHeight,clientHeight} = document.documentElement;
+   if (cardInfo.classList.contains('animCard')===true){
+     // window.scrollTo(0,0);
+      return
+   } ;
    if ((Math.trunc(scrollHeight-scrollTop)-(clientHeight+100)) <= 0 ){
       console.log('en bas ' + index )
       index = index + 20
      connect();
    }
 })
+
+function searchByName(name){
+      console.log(index)
+      let l = index + 10
+      fetch(`https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${name}&apikey=d3b97d40b5ed5059a984df36093c63c4&hash=8ca546ed33714770ccae7e432abb3c92&ts=1`)
+      .then(r => r.json())
+      .then(d => {
+         containerCards.innerHTML = ""
+         console.log(d.data.results)
+         d.data.results.forEach(e => {
+            getInfoCharacter(e)
+         });
+        
+      })
+}
 
 function connect(){
    console.log(index)
